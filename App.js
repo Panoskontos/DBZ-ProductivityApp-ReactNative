@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { Image, StyleSheet, Text, View } from 'react-native';
-import { Images } from './comp/images';
+import { StyleSheet, Text, View } from 'react-native';
+import Images from './comp/Images';
 
 
 export default function App() {
@@ -9,7 +9,7 @@ export default function App() {
       <Text style={styles.text}>Text Manager 101</Text>
       <StatusBar style="auto" />
 
-      {/* <Images /> */}
+      <Images />
 
     </View>
   );
