@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
 import React from "react"
 import Header from '../components/Header';
+import StatusCards from '../components/StatusCards';
 
 export default function Home() {
   
@@ -15,6 +16,8 @@ export default function Home() {
             <View style={styles.container}>
                 
                 <Header />
+
+                <StatusCards />
 
             <Text style={styles.text}>
              This is home page
