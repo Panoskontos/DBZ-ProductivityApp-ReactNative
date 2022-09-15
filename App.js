@@ -9,7 +9,6 @@ export default function App() {
       <Text style={styles.text}>Text Manager 101</Text>
       <StatusBar style="auto" />
 
-      <Images />
 
     </View>
   );
