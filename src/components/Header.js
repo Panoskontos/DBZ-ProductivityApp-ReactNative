@@ -12,8 +12,10 @@ export default function Header() {
         width:'100%',
         borderRadius:10,
         padding:10,
+        paddingTop:30,
         flexDirection:"row",
         alignItems:"center"
+        
         },
 
         
@@ -41,7 +43,7 @@ export default function Header() {
         greetings:{
             color:'white',
             fontSize:20,
-            fontWeight:700
+            fontWeight:0.7
         },
 
         subMsg:{
