@@ -8,13 +8,19 @@ import React from "react"
 export default function App() {
   const [route, setRoute] = useState("Home")
   const showPages = () =>{
-    
+    switch(route){
+      case "Home":
+        return <Text>Home</Text>
+        break;
+      default:
+        break;
+
+    }
   }
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Task Manager 101</Text>
-      <StatusBar style="auto" />
+      {showPages()}
 
 
     </View>
@@ -24,7 +30,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },
