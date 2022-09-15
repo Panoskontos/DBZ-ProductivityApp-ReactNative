@@ -30,6 +30,24 @@ export default function Header() {
             justifyContent:'center',
             width:60,
             height:60,
+        },
+
+        welcomeMsg:{
+            fontSize:20,
+            fontWeight:'700',
+            paddingLeft: 20
+        },
+
+        greetings:{
+            color:'white',
+            fontSize:20,
+            fontWeight:700
+        },
+
+        subMsg:{
+            color:'#959CAC',
+            fontSize:15,
+            fontWeight:300
         }
        
       });
