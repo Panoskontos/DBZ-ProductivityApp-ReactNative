@@ -92,8 +92,8 @@ input2:{
     color:'grey',
     padding: 10,
     marginLeft:20,
-    textAlignVertical:"top"
-    backgroundColor:'white'
+    textAlignVertical:"top",
+    backgroundColor:'white',
 }
     
     
@@ -127,6 +127,7 @@ input2:{
                   style={styles.input2}
                   onChangeText={onChangeText2}
                   value={text2}
+                  multiline={true}
                 />
               </SafeAreaView>
 
