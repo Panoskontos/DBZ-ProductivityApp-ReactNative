@@ -20,15 +20,14 @@ export default function Home() {
                 <Header />
 
                 <StatusCards />
-
-
             {/* <Text style={styles.text}>
              This is home page
             </Text> */}
             </View>
-
-
         </View>
+
+
+        
                 <Tasks />
         
         <TouchableOpacity style={styles.addTaskBtn}>
