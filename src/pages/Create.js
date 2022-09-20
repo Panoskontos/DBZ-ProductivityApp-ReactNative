@@ -10,7 +10,7 @@ import Tasks from '../components/Tasks';
 export default function Create() {
 
   const [text, onChangeText] = React.useState("Enter title");
-  const [text2, onChangeText2] = React.useState("Enter text");
+  const [text2, onChangeText2] = React.useState("Description");
 
 
   const styles = StyleSheet.create({
@@ -90,10 +90,22 @@ input2:{
     borderRadius:10,
     borderColor:'lightgrey',
     color:'grey',
-    padding: 10,
+    padding: 15,
     marginLeft:20,
     textAlignVertical:"top",
     backgroundColor:'white',
+},
+
+submit_btn:{
+  backgroundColor:'',
+  alignItems:'center',
+}
+,
+sBtn:{
+  backgroundColor:'darkblue',
+  padding:10,
+  borderRadius:10
+
 }
     
     
@@ -133,6 +145,11 @@ input2:{
 
         </View>
 
+        <View style={styles.submit_btn}>
+         <TouchableOpacity style={styles.sBtn}>
+             <Text style={{color:"white"}}>Save</Text>
+          </TouchableOpacity>
+        </View>
      
 
         
@@ -140,7 +157,7 @@ input2:{
 
 
                 <TouchableOpacity style={styles.backBtn}>
-            <Text style={styles.plus}>Back</Text>
+                 <Text style={styles.plus}>Back</Text>
         </TouchableOpacity>
         
         
