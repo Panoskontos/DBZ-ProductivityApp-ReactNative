@@ -43,13 +43,13 @@ export default function Header() {
         greetings:{
             color:'white',
             fontSize:20,
-            fontWeight:0.7
+            fontWeight:'700'
         },
 
         subMsg:{
             color:'#959CAC',
             fontSize:15,
-            fontWeight:300
+            fontWeight:'300'
         }
        
       });
@@ -70,7 +70,7 @@ export default function Header() {
 
             <View style={styles.welcomeMsg}>
                 <Text style={styles.greetings}>
-                    Hi, I'm Jeff
+                    Hi, Panagiotis
                 </Text>
                 <Text style={styles.subMsg}>
                     Last time you completed 4 tasks

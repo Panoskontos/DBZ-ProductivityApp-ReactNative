@@ -6,6 +6,33 @@ import React from "react"
 
 export default function Tasks() {
 
+    const tasks = [
+        {
+            id:`skills_${new Date().getTime()}_${Math.random()}`,
+            title: "Clean Car"
+        },
+        {
+            id:`skills_${new Date().getTime()}_${Math.random()}`,
+            title: "Pay Net"
+        },
+        {
+            id:`skills_${new Date().getTime()}_${Math.random()}`,
+            title: "Git puts"
+        },
+
+    ]
+
+    const showTasks = () =>{
+        return tasks.map((i)=>{
+            return(
+            <View style={styles.task} key={i.id}>
+                <Text style={styles.task_title}>{i.title}</Text>
+            </View>
+
+            )
+        })
+    }
+
     const styles = StyleSheet.create({
 
         tasks:{
@@ -38,6 +65,11 @@ export default function Tasks() {
               shadowOpacity:0.1,
               textShadowRadius:6.68
 
+        },
+        task_title:{
+            fontSize:18,
+            color:"#7c8bc0",
+            fontWeight:"700",
         }
        
     });
@@ -48,10 +80,9 @@ export default function Tasks() {
        <View style={styles.container}>
             
             <Text style={styles.title}>Tasks</Text>
+            {showTasks()}
 
-            <View style={styles.task}>
-                <Text style={styles.task_title}>Tasks</Text>
-            </View>
+            
        
        </View>
    </View>
