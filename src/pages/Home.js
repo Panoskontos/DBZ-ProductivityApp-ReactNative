@@ -4,6 +4,8 @@ import { useState } from 'react';
 import React from "react"
 import Header from '../components/Header';
 import StatusCards from '../components/StatusCards';
+import Tasks from '../components/Tasks';
+
 
 export default function Home() {
   
@@ -19,11 +21,15 @@ export default function Home() {
 
                 <StatusCards />
 
-            <Text style={styles.text}>
+
+            {/* <Text style={styles.text}>
              This is home page
-            </Text>
+            </Text> */}
             </View>
+
+
         </View>
+                <Tasks />
         
         <TouchableOpacity style={styles.addTaskBtn}>
             <Text style={styles.plus}>+</Text>
@@ -44,6 +50,7 @@ const styles = StyleSheet.create({
         paddingTop:36,
         paddingRight:20,
         paddingLeft:20,
+        
 
 },
 
