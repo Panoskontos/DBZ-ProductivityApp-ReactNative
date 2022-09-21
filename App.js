@@ -11,14 +11,30 @@ export default function App() {
   // Routing
   const [route, setRoute] = useState("Home")
 
+  const [tasks, setTasks] = useState([
+    {
+        id:`skills_${new Date().getTime()}_${Math.random()}`,
+        title: "Clean Car"
+    },
+    {
+        id:`skills_${new Date().getTime()}_${Math.random()}`,
+        title: "Pay Net"
+    },
+    {
+        id:`skills_${new Date().getTime()}_${Math.random()}`,
+        title: "Git puts"
+    },
+
+])
+
 
   const showPages = () =>{
     switch(route){
       case "Home":
-        return <Home route={route} setRoute={setRoute} />
+        return <Home route={route} setRoute={setRoute} tasks={tasks} setTasks={setTasks} />
         break;
       case "Create":
-        return <Create route={route} setRoute={setRoute} />
+        return <Create route={route} setRoute={setRoute} tasks={tasks} setTasks={setTasks} />
         break;
       default:
         break;

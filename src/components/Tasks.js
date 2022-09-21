@@ -4,26 +4,26 @@ import { useState } from 'react';
 import React from "react"
 
 
-export default function Tasks() {
+export default function Tasks(props) {
 
-    const tasks = [
-        {
-            id:`skills_${new Date().getTime()}_${Math.random()}`,
-            title: "Clean Car"
-        },
-        {
-            id:`skills_${new Date().getTime()}_${Math.random()}`,
-            title: "Pay Net"
-        },
-        {
-            id:`skills_${new Date().getTime()}_${Math.random()}`,
-            title: "Git puts"
-        },
+    // const tasks = [
+    //     {
+    //         id:`skills_${new Date().getTime()}_${Math.random()}`,
+    //         title: "Clean Car"
+    //     },
+    //     {
+    //         id:`skills_${new Date().getTime()}_${Math.random()}`,
+    //         title: "Pay Net"
+    //     },
+    //     {
+    //         id:`skills_${new Date().getTime()}_${Math.random()}`,
+    //         title: "Git puts"
+    //     },
 
-    ]
+    // ]
 
     const showTasks = () =>{
-        return tasks.map((i)=>{
+        return props.tasks.map((i)=>{
             return(
             <View style={styles.task} key={i.id}>
                 <Text style={styles.task_title}>{i.title}</Text>

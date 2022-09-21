@@ -12,6 +12,17 @@ export default function Create(props) {
   const [text, onChangeText] = React.useState("Enter title");
   const [text2, onChangeText2] = React.useState("Description");
 
+  const saveTask = () =>{
+    var new_tasks = props.tasks
+    new_tasks.push({
+      id:`skills_${new Date().getTime()}_${Math.random()}`,
+      title: text
+  })
+
+    props.setTasks(new_tasks)
+    props.setRoute("Home")
+  }
+
   const handleBackButton = () =>{
     props.setRoute("Home")
 }
@@ -150,7 +161,7 @@ sBtn:{
         </View>
 
         <View style={styles.submit_btn}>
-         <TouchableOpacity style={styles.sBtn}>
+         <TouchableOpacity style={styles.sBtn} onPress={saveTask}>
              <Text style={{color:"white"}}>Save</Text>
           </TouchableOpacity>
         </View>

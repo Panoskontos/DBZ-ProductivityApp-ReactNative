@@ -32,7 +32,7 @@ export default function Home(props) {
 
 
         
-                <Tasks />
+                <Tasks tasks={props.tasks} setTasks={props.setTasks} />
         
         <TouchableOpacity style={styles.addTaskBtn} onPress={()=>{handleAddButton()}}>
             <Text style={styles.plus}>+</Text>
