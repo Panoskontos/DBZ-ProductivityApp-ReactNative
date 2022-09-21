@@ -32,7 +32,13 @@ export default function Home(props) {
 
 
         
-                <Tasks tasks={props.tasks} setTasks={props.setTasks} />
+                <Tasks 
+                route={props.route} 
+                setRoute={props.setRoute} 
+                tasks={props.tasks} 
+                setTasks={props.setTasks} 
+                setSelected_task={props.setSelected_task}
+                />
         
         <TouchableOpacity style={styles.addTaskBtn} onPress={()=>{handleAddButton()}}>
             <Text style={styles.plus}>+</Text>

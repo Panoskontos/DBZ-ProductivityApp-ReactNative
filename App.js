@@ -5,11 +5,16 @@ import { useState } from 'react';
 import React from "react"
 import Home from './src/pages/Home';
 import Create from './src/pages/Create';
+import Edit from './src/pages/Edit';
+import { IconComponentProvider, Icon } from "@react-native-material/core";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+
 
 export default function App() {
 
   // Routing
   const [route, setRoute] = useState("Home")
+  const [selected_task, setSelected_task] = useState(null)
 
   const [tasks, setTasks] = useState([
     {
@@ -22,7 +27,7 @@ export default function App() {
     },
     {
         id:`skills_${new Date().getTime()}_${Math.random()}`,
-        title: "Git puts"
+        title: "Workout"
     },
 
 ])
@@ -31,11 +36,14 @@ export default function App() {
   const showPages = () =>{
     switch(route){
       case "Home":
-        return <Home route={route} setRoute={setRoute} tasks={tasks} setTasks={setTasks} />
+        return <Home route={route} setRoute={setRoute} tasks={tasks} setTasks={setTasks} setSelected_task={setSelected_task} />
         break;
       case "Create":
         return <Create route={route} setRoute={setRoute} tasks={tasks} setTasks={setTasks} />
         break;
+        case "Edit":
+          return <Edit route={route} setRoute={setRoute} tasks={tasks} setTasks={setTasks} selected_task={selected_task} />
+          break;
       default:
         break;
 
@@ -43,11 +51,14 @@ export default function App() {
   }
 
   return (
+    <IconComponentProvider IconComponent={MaterialCommunityIcons}>
+
     <View style={styles.container}>
       {showPages()}
 
 
     </View>
+    </IconComponentProvider>
   );
 }
 

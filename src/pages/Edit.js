@@ -7,17 +7,17 @@ import StatusCards from '../components/StatusCards';
 import Tasks from '../components/Tasks';
 
 
-export default function Create(props) {
+export default function Edit(props) {
 
-  const [text, onChangeText] = React.useState("");
+  const [text, onChangeText] = React.useState(props.selected_task.title);
   const [text2, onChangeText2] = React.useState("");
 
-  const saveTask = () =>{
+  const updateTask = () =>{
     var new_tasks = props.tasks
-    new_tasks.push({
-      id:`skills_${new Date().getTime()}_${Math.random()}`,
-      title: text
-  })
+
+    // update object
+    var index = new_tasks.findIndex((obj => obj.id == props.selected_task.id));
+    new_tasks[index].title = text
 
     props.setTasks(new_tasks)
     props.setRoute("Home")
@@ -128,21 +128,20 @@ sBtn:{
   
   });
   
-  
+ 
 
   return (
     <View style={styles.home}>
         
 
         <View style={styles.top}>
-            <Text style={styles.top_title}>Create Task</Text>
+            <Text style={styles.top_title}>Edit Task {props.selected_task.title}</Text>
         </View>
         <View style={styles.top}>
             <Text style={styles.mid_title}>Title</Text>
               
               <SafeAreaView >
                 <TextInput
-                  placeholder='title'
                   style={styles.input}
                   onChangeText={onChangeText}
                   value={text}
@@ -152,7 +151,6 @@ sBtn:{
 
               <SafeAreaView >
                 <TextInput
-                  placeholder='description'
                   style={styles.input2}
                   onChangeText={onChangeText2}
                   value={text2}
@@ -163,8 +161,8 @@ sBtn:{
         </View>
 
         <View style={styles.submit_btn}>
-         <TouchableOpacity style={styles.sBtn} onPress={saveTask}>
-             <Text style={{color:"white"}}>Save</Text>
+         <TouchableOpacity style={styles.sBtn} onPress={updateTask}>
+             <Text style={{color:"white"}}>Update</Text>
           </TouchableOpacity>
         </View>
      

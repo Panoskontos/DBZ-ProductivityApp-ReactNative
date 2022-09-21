@@ -1,32 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, TouchableHighlight } from 'react-native';
 import { useState } from 'react';
 import React from "react"
+// import { Icon } from "@rneui/themed";
+import { IconComponentProvider, Icon } from "@react-native-material/core";
 
 
 export default function Tasks(props) {
 
-    // const tasks = [
-    //     {
-    //         id:`skills_${new Date().getTime()}_${Math.random()}`,
-    //         title: "Clean Car"
-    //     },
-    //     {
-    //         id:`skills_${new Date().getTime()}_${Math.random()}`,
-    //         title: "Pay Net"
-    //     },
-    //     {
-    //         id:`skills_${new Date().getTime()}_${Math.random()}`,
-    //         title: "Git puts"
-    //     },
+    const editTask = (id) =>{
+        props.setSelected_task(id)
+        props.setRoute("Edit")
 
-    // ]
+      }
 
     const showTasks = () =>{
         return props.tasks.map((i)=>{
             return(
             <View style={styles.task} key={i.id}>
                 <Text style={styles.task_title}>{i.title}</Text>
+                <TouchableHighlight onPress={()=>editTask(i)}>
+                    <Icon name="application-edit-outline" size={24} color="#646da1" style={{marginLeft:23}}/>
+                </TouchableHighlight>
             </View>
 
             )
@@ -55,6 +50,8 @@ export default function Tasks(props) {
         task:{
             backgroundColor:"white",
             borderRadius:5,
+            flexDirection:'row',
+            alignItems:'center',
             padding:20,
             marginBottom:10,
             shadowColor:"#1b1b1b",
