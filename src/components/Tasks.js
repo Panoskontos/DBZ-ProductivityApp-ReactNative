@@ -8,6 +8,11 @@ import { IconComponentProvider, Icon } from "@react-native-material/core";
 
 export default function Tasks(props) {
 
+    const [seed, setSeed] = useState(Math.random())
+    const reset = () =>{
+        setSeed(Math.random())
+    }
+
     const editTask = (id) =>{
         props.setSelected_task(id)
         props.setRoute("Edit")
@@ -19,6 +24,29 @@ export default function Tasks(props) {
         new_tasks = new_tasks.filter(task => task !== id);
         props.setTasks(new_tasks)
         props.setDeleted(props.deleted+1)
+        props.setProgress(props.progress-1)
+        
+    }
+
+
+    const completedTask = (id) =>{
+        var new_tasks = props.tasks
+        // update object
+        var index = new_tasks.findIndex((task => task === id));
+
+        if(id.completed){
+            new_tasks[index].completed = false
+            props.setTasks(new_tasks)
+            reset()
+            props.setCompleted(props.completed-1)
+            // props.setProgress(props.progress+1)
+            return;
+        }
+        new_tasks[index].completed = true
+        props.setTasks(new_tasks)
+        reset()
+        props.setCompleted(props.completed+1)
+        // props.setProgress(props.progress-1)
         
     }
 
@@ -34,6 +62,10 @@ export default function Tasks(props) {
 
                 <TouchableHighlight onPress={()=>deleteTask(i)}>
                     <Icon name="delete" size={24} color="#646da1" style={{marginLeft:23}}/>
+                </TouchableHighlight>
+
+                <TouchableHighlight onPress={()=>completedTask(i)} key={seed}>
+                    <Icon name={i.completed?"check-circle-outline":"checkbox-blank-circle-outline"} size={24} color={i.completed?"green":"#646da1"} style={{marginLeft:23}}/>
                 </TouchableHighlight>
                 
             </View>

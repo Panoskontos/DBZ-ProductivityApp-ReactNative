@@ -16,7 +16,9 @@ export default function Create(props) {
     var new_tasks = props.tasks
     new_tasks.push({
       id:`skills_${new Date().getTime()}_${Math.random()}`,
-      title: text
+      title: text,
+      completed:false
+
   })
 
     props.setTasks(new_tasks)

@@ -23,15 +23,20 @@ export default function App() {
   const [tasks, setTasks] = useState([
     {
         id:`skills_${new Date().getTime()}_${Math.random()}`,
-        title: "Clean Car"
+        title: "Clean Car",
+        completed:false
     },
     {
         id:`skills_${new Date().getTime()}_${Math.random()}`,
-        title: "Pay Net"
+        title: "Pay Net",
+        completed:false
+
     },
     {
         id:`skills_${new Date().getTime()}_${Math.random()}`,
-        title: "Workout"
+        title: "Workout",
+        completed:false
+
     },
 
 ])
@@ -50,6 +55,8 @@ export default function App() {
         progress={progress}
         deleted={deleted}
         setDeleted={setDeleted}
+        setCompleted={setCompleted}
+        setProgress={setProgress}
         />
         break;
       case "Create":
