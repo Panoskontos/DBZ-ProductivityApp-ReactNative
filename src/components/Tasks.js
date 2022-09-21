@@ -14,14 +14,27 @@ export default function Tasks(props) {
 
       }
 
+    const deleteTask = (id) =>{
+        var new_tasks = props.tasks
+        new_tasks = new_tasks.filter(task => task !== id);
+        props.setTasks(new_tasks)
+        
+    }
+
     const showTasks = () =>{
         return props.tasks.map((i)=>{
             return(
             <View style={styles.task} key={i.id}>
                 <Text style={styles.task_title}>{i.title}</Text>
+
                 <TouchableHighlight onPress={()=>editTask(i)}>
                     <Icon name="application-edit-outline" size={24} color="#646da1" style={{marginLeft:23}}/>
                 </TouchableHighlight>
+
+                <TouchableHighlight onPress={()=>deleteTask(i)}>
+                    <Icon name="delete" size={24} color="#646da1" style={{marginLeft:23}}/>
+                </TouchableHighlight>
+                
             </View>
 
             )
