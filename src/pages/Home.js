@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native';
 import { useState } from 'react';
 import React from "react"
 import Header from '../components/Header';
@@ -31,7 +31,8 @@ export default function Home(props) {
         </View>
 
 
-        
+        {/* <ScrollView> */}
+
                 <Tasks 
                 route={props.route} 
                 setRoute={props.setRoute} 
@@ -44,8 +45,9 @@ export default function Home(props) {
                 setCompleted={props.setCompleted}
                 progress={props.progress}
                 setProgress={props.setProgress}
-
-         />
+                
+                />
+          {/* </ScrollView> */}
         
         <TouchableOpacity style={styles.addTaskBtn} onPress={()=>{handleAddButton()}}>
             <Text style={styles.plus}>+</Text>

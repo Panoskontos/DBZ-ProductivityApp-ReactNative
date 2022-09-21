@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity, Image, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, TouchableHighlight,ScrollView } from 'react-native';
 import { useState } from 'react';
 import React from "react"
 // import { Icon } from "@rneui/themed";
@@ -79,7 +79,8 @@ export default function Tasks(props) {
         tasks:{
             // backgroundColor:'red',
             flex:1,
-            paddingTop:20
+            paddingTop:20,
+            
         },
         title:{
             fontSize:30,
@@ -123,11 +124,19 @@ export default function Tasks(props) {
        <View style={styles.container}>
             
             <Text style={styles.title}>Tasks</Text>
+            <ScrollView>
             {showTasks()}
+            <Text>{`\n`}</Text>
+            <Text>{`\n`}</Text>
+            </ScrollView>
+
 
             
        
        </View>
+
+        
+
    </View>
   );
 }
