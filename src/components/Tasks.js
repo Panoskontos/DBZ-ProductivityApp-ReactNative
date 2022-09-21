@@ -18,6 +18,7 @@ export default function Tasks(props) {
         var new_tasks = props.tasks
         new_tasks = new_tasks.filter(task => task !== id);
         props.setTasks(new_tasks)
+        props.setDeleted(props.deleted+1)
         
     }
 

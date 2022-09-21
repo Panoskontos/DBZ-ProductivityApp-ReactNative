@@ -63,6 +63,7 @@ export default function Header() {
             style={styles.headerProfile}
             source={{
                 uri:'https://randomuser.me/api/portraits/men/86.jpg'
+                // uri:''
             }}
             />
 

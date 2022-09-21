@@ -37,12 +37,17 @@ export default function Edit(props) {
 
     top:{
       // backgroundColor:'red',
+      marginTop:30,
       padding:20,
       display:'flex',
       flexDirection:'column',
       alignItems:'center'
       
 
+    },
+
+    top_container:{
+      padding:20,
     },
   
     container:{
@@ -137,8 +142,8 @@ sBtn:{
         <View style={styles.top}>
             <Text style={styles.top_title}>Edit Task {props.selected_task.title}</Text>
         </View>
-        <View style={styles.top}>
-            <Text style={styles.mid_title}>Title</Text>
+        <View style={styles.top_container}>
+            {/* <Text style={styles.mid_title}>Title</Text> */}
               
               <SafeAreaView >
                 <TextInput

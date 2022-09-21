@@ -23,7 +23,7 @@ export default function Home(props) {
                 
                 <Header />
 
-                <StatusCards />
+                <StatusCards completed={props.completed} progress={props.progress} deleted={props.deleted} />
             {/* <Text style={styles.text}>
              This is home page
             </Text> */}
@@ -38,6 +38,8 @@ export default function Home(props) {
                 tasks={props.tasks} 
                 setTasks={props.setTasks} 
                 setSelected_task={props.setSelected_task}
+                deleted={props.deleted}
+                setDeleted={props.setDeleted}
                 />
         
         <TouchableOpacity style={styles.addTaskBtn} onPress={()=>{handleAddButton()}}>

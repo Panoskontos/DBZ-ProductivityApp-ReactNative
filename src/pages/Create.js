@@ -20,6 +20,8 @@ export default function Create(props) {
   })
 
     props.setTasks(new_tasks)
+
+    props.setProgress(props.progress+1)
     props.setRoute("Home")
   }
 
@@ -37,12 +39,18 @@ export default function Create(props) {
 
     top:{
       // backgroundColor:'red',
+      marginTop:40,
       padding:20,
       display:'flex',
       flexDirection:'column',
       alignItems:'center'
       
 
+    },
+
+    top_container:{
+      padding:20,
+      
     },
   
     container:{
@@ -79,11 +87,14 @@ plus:{
 top_title:{
     fontWeight:'700',
       fontSize:25,
-      color:'grey'
+      color:'grey',
+     
 },
 mid_title:{
   fontWeight:'700',
   fontSize:20,
+  justifyContent:"center",
+  alignItems:"center"
 },
 
 input:{
@@ -118,7 +129,9 @@ submit_btn:{
 ,
 sBtn:{
   backgroundColor:'darkblue',
-  padding:10,
+  paddingTop:10,
+  paddingBottom:10,
+  paddingHorizontal:20,
   borderRadius:10
 
 }
@@ -137,8 +150,8 @@ sBtn:{
         <View style={styles.top}>
             <Text style={styles.top_title}>Create Task</Text>
         </View>
-        <View style={styles.top}>
-            <Text style={styles.mid_title}>Title</Text>
+        <View style={styles.top_container}>
+            {/* <Text style={styles.mid_title}>Title</Text> */}
               
               <SafeAreaView >
                 <TextInput

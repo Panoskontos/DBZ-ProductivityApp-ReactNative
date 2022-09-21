@@ -4,7 +4,7 @@ import { useState } from 'react';
 import React from "react"
 
 
-export default function StatusCards() {
+export default function StatusCards(props) {
 
     const styles = StyleSheet.create({
       statusCards:{
@@ -102,7 +102,7 @@ export default function StatusCards() {
               <Text style={styles.title}>Completed</Text>
           </View>
           <View style={styles.numberContainer}>
-              <Text style={styles.number}>100</Text>
+              <Text style={styles.number}>{props.completed}</Text>
           </View>
 
         </View>
@@ -116,7 +116,7 @@ export default function StatusCards() {
               <Text style={styles.title}>In progress</Text>
           </View>
           <View style={styles.numberContainer}>
-              <Text style={styles.number}>100</Text>
+              <Text style={styles.number}>{props.progress}</Text>
           </View>
 
         </View>
@@ -128,7 +128,7 @@ export default function StatusCards() {
               <Text style={styles.title}>Deleted</Text>
           </View>
           <View style={styles.numberContainer}>
-              <Text style={styles.number}>100</Text>
+              <Text style={styles.number}>{props.deleted}</Text>
           </View>
 
         </View>
