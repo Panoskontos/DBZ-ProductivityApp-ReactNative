@@ -7,7 +7,11 @@ import StatusCards from '../components/StatusCards';
 import Tasks from '../components/Tasks';
 
 
-export default function Home() {
+export default function Home(props) {
+
+  const handleAddButton = () =>{
+      props.setRoute("Create")
+  }
   
 
   return (
@@ -30,7 +34,7 @@ export default function Home() {
         
                 <Tasks />
         
-        <TouchableOpacity style={styles.addTaskBtn}>
+        <TouchableOpacity style={styles.addTaskBtn} onPress={()=>{handleAddButton()}}>
             <Text style={styles.plus}>+</Text>
         </TouchableOpacity>
     

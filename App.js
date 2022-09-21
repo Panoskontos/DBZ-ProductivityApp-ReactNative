@@ -9,14 +9,16 @@ import Create from './src/pages/Create';
 export default function App() {
 
   // Routing
-  const [route, setRoute] = useState("Create")
+  const [route, setRoute] = useState("Home")
+
+
   const showPages = () =>{
     switch(route){
       case "Home":
-        return <Home />
+        return <Home route={route} setRoute={setRoute} />
         break;
       case "Create":
-        return <Create />
+        return <Create route={route} setRoute={setRoute} />
         break;
       default:
         break;

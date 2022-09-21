@@ -7,10 +7,14 @@ import StatusCards from '../components/StatusCards';
 import Tasks from '../components/Tasks';
 
 
-export default function Create() {
+export default function Create(props) {
 
   const [text, onChangeText] = React.useState("Enter title");
   const [text2, onChangeText2] = React.useState("Description");
+
+  const handleBackButton = () =>{
+    props.setRoute("Home")
+}
 
 
   const styles = StyleSheet.create({
@@ -156,7 +160,7 @@ sBtn:{
                 {/* <Tasks /> */}
 
 
-                <TouchableOpacity style={styles.backBtn}>
+                <TouchableOpacity style={styles.backBtn} onPress={handleBackButton}>
                  <Text style={styles.plus}>Back</Text>
         </TouchableOpacity>
         
