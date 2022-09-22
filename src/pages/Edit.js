@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, TextInput,ImageBackground } from 'react-native';
 import { useState } from 'react';
 import React from "react"
 import Header from '../components/Header';
@@ -11,6 +11,7 @@ export default function Edit(props) {
 
   const [text, onChangeText] = React.useState(props.selected_task.title);
   const [text2, onChangeText2] = React.useState("");
+  const image = { uri: "https://w0.peakpx.com/wallpaper/888/241/HD-wallpaper-dbz-goku.jpg" };
 
   const updateTask = () =>{
     var new_tasks = props.tasks
@@ -31,13 +32,15 @@ export default function Edit(props) {
   const styles = StyleSheet.create({
     home: {
       flex: 1,
-      backgroundColor: '#F7FAFD',
-     
+    },
+    image: {
+      flex: 1,
+      justifyContent: "center"
     },
 
     top:{
       // backgroundColor:'red',
-      marginTop:30,
+      
       padding:20,
       display:'flex',
       flexDirection:'column',
@@ -48,6 +51,8 @@ export default function Edit(props) {
 
     top_container:{
       padding:20,
+      marginBottom:20
+      
     },
   
     container:{
@@ -84,11 +89,14 @@ plus:{
 top_title:{
     fontWeight:'700',
       fontSize:25,
-      color:'grey'
+      color:'darkblue',
+     
 },
 mid_title:{
   fontWeight:'700',
   fontSize:20,
+  justifyContent:"center",
+  alignItems:"center"
 },
 
 input:{
@@ -119,17 +127,18 @@ input2:{
 submit_btn:{
   backgroundColor:'',
   alignItems:'center',
+  marginBottom:80
 }
 ,
 sBtn:{
   backgroundColor:'darkblue',
-  padding:10,
+  paddingTop:10,
+  paddingBottom:10,
+  paddingHorizontal:20,
   borderRadius:10
 
-}
-    
-    
-  
+},
+
   
   });
   
@@ -137,11 +146,14 @@ sBtn:{
 
   return (
     <View style={styles.home}>
+      <ImageBackground source={image} resizeMode="cover" style={styles.image}>
         
 
-        <View style={styles.top}>
+        
+
+        {/* <View style={styles.top}>
             <Text style={styles.top_title}>Edit Task {props.selected_task.title}</Text>
-        </View>
+        </View> */}
         <View style={styles.top_container}>
             {/* <Text style={styles.mid_title}>Title</Text> */}
               
@@ -182,7 +194,7 @@ sBtn:{
         </TouchableOpacity>
         
         
-    
+        </ImageBackground>
     </View>
   );
 }

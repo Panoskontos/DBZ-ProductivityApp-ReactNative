@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, TextInput,ImageBackground } from 'react-native';
 import { useState } from 'react';
 import React from "react"
 import Header from '../components/Header';
@@ -11,6 +11,8 @@ export default function Create(props) {
 
   const [text, onChangeText] = React.useState("");
   const [text2, onChangeText2] = React.useState("");
+  const image = { uri: "https://wallpaper.dog/large/20501620.jpg" };
+
 
   const saveTask = () =>{
     var new_tasks = props.tasks
@@ -35,13 +37,15 @@ export default function Create(props) {
   const styles = StyleSheet.create({
     home: {
       flex: 1,
-      backgroundColor: '#F7FAFD',
-     
+    },
+    image: {
+      flex: 1,
+      justifyContent: "center"
     },
 
     top:{
       // backgroundColor:'red',
-      marginTop:40,
+      
       padding:20,
       display:'flex',
       flexDirection:'column',
@@ -52,6 +56,7 @@ export default function Create(props) {
 
     top_container:{
       padding:20,
+      marginBottom:20
       
     },
   
@@ -89,7 +94,7 @@ plus:{
 top_title:{
     fontWeight:'700',
       fontSize:25,
-      color:'grey',
+      color:'darkblue',
      
 },
 mid_title:{
@@ -127,6 +132,7 @@ input2:{
 submit_btn:{
   backgroundColor:'',
   alignItems:'center',
+  marginBottom:80
 }
 ,
 sBtn:{
@@ -136,7 +142,8 @@ sBtn:{
   paddingHorizontal:20,
   borderRadius:10
 
-}
+},
+
     
     
   
@@ -147,11 +154,12 @@ sBtn:{
 
   return (
     <View style={styles.home}>
+      <ImageBackground source={image} resizeMode="cover" style={styles.image}>
         
 
-        <View style={styles.top}>
+        {/* <View style={styles.top}>
             <Text style={styles.top_title}>Create Task</Text>
-        </View>
+        </View> */}
         <View style={styles.top_container}>
             {/* <Text style={styles.mid_title}>Title</Text> */}
               
@@ -194,7 +202,8 @@ sBtn:{
         </TouchableOpacity>
         
         
-    
+
+        </ImageBackground>
     </View>
   );
 }
