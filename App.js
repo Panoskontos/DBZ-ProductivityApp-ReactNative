@@ -14,31 +14,31 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 export default function App() {
 
   // Routing
-  const [route, setRoute] = useState("Avatar")
+  const [route, setRoute] = useState("Home")
   const [selected_task, setSelected_task] = useState(null)
   const [chosenAvatar, setChosenAvatar] = useState("https://www.aacai.com.au/wp-content/plugins/userpro/img/default_avatar_female.jpg")
-  const [completed, setCompleted] = useState(15)
-  const [progress, setProgress] = useState(3)
+  const [completed, setCompleted] = useState(0)
+  const [progress, setProgress] = useState(1)
   const [deleted, setDeleted] = useState(0)
 
   const [tasks, setTasks] = useState([
     {
         id:`skills_${new Date().getTime()}_${Math.random()}`,
-        title: "Work",
+        title: "Create a task",
         completed:false
     },
-    {
-        id:`skills_${new Date().getTime()}_${Math.random()}`,
-        title: "Workout",
-        completed:false
+    // {
+    //     id:`skills_${new Date().getTime()}_${Math.random()}`,
+    //     title: "Workout",
+    //     completed:false
 
-    },
-    {
-        id:`skills_${new Date().getTime()}_${Math.random()}`,
-        title: "Programm",
-        completed:false
+    // },
+    // {
+    //     id:`skills_${new Date().getTime()}_${Math.random()}`,
+    //     title: "Programm",
+    //     completed:false
 
-    },
+    // },
 
 ])
 

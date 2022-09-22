@@ -20,11 +20,13 @@ export default function Tasks(props) {
       }
 
     const deleteTask = (id) =>{
-        var new_tasks = props.tasks
-        new_tasks = new_tasks.filter(task => task !== id);
-        props.setTasks(new_tasks)
-        props.setDeleted(props.deleted+1)
-        props.setProgress(props.progress-1)
+        if(id.completed){
+            var new_tasks = props.tasks
+            new_tasks = new_tasks.filter(task => task !== id);
+            props.setTasks(new_tasks)
+            props.setDeleted(props.deleted+1)
+        }
+        // props.setProgress(props.progress-1)
         
     }
 
@@ -39,14 +41,14 @@ export default function Tasks(props) {
             props.setTasks(new_tasks)
             reset()
             props.setCompleted(props.completed-1)
-            // props.setProgress(props.progress+1)
+            props.setProgress(props.progress+1)
             return;
         }
         new_tasks[index].completed = true
         props.setTasks(new_tasks)
         reset()
         props.setCompleted(props.completed+1)
-        // props.setProgress(props.progress-1)
+        props.setProgress(props.progress-1)
         
     }
 
@@ -60,7 +62,7 @@ export default function Tasks(props) {
                     <Icon name="application-edit-outline" size={24} color="#646da1" style={{marginLeft:23}}/>
                 </TouchableHighlight>
 
-                <TouchableHighlight onPress={()=>deleteTask(i)}>
+                <TouchableHighlight  onPress={()=>deleteTask(i)}>
                     <Icon name="delete" size={24} color="#646da1" style={{marginLeft:23}}/>
                 </TouchableHighlight>
 

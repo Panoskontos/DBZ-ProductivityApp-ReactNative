@@ -121,7 +121,7 @@ export default function StatusCards(props) {
 
         </View>
       </View>
-      <View style={styles.column}>
+      {/* <View style={styles.column}>
       <View style={styles.card_deleted}>
           
           <View>
@@ -132,7 +132,7 @@ export default function StatusCards(props) {
           </View>
 
         </View>
-      </View>
+      </View> */}
         
     </View>
   );

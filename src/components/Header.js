@@ -80,7 +80,8 @@ export default function Header(props) {
                     Hi, Panagiotis
                 </Text>
                 <Text style={styles.subMsg}>
-                    Last time you completed 4 tasks
+                    {/* Last time you completed 4 tasks */}
+                    Start completing your daily tasks
                 </Text>
             </View>
     </View>

@@ -157,23 +157,24 @@ sBtn:{
               
               <SafeAreaView >
                 <TextInput
-                  placeholder='title'
+                  placeholder='Enter Task'
                   style={styles.input}
                   onChangeText={onChangeText}
                   value={text}
+                  multiline={true}
                 />
               </SafeAreaView>
 
 
-              <SafeAreaView >
+              {/* <SafeAreaView >
                 <TextInput
                   placeholder='description'
                   style={styles.input2}
                   onChangeText={onChangeText2}
                   value={text2}
-                  multiline={true}
+                  
                 />
-              </SafeAreaView>
+              </SafeAreaView> */}
 
         </View>
 

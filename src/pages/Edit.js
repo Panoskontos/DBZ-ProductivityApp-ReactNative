@@ -150,18 +150,19 @@ sBtn:{
                   style={styles.input}
                   onChangeText={onChangeText}
                   value={text}
+                  multiline={true}
                 />
               </SafeAreaView>
 
 
-              <SafeAreaView >
+              {/* <SafeAreaView >
                 <TextInput
                   style={styles.input2}
                   onChangeText={onChangeText2}
                   value={text2}
                   multiline={true}
                 />
-              </SafeAreaView>
+              </SafeAreaView> */}
 
         </View>
 
