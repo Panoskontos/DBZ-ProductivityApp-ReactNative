@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, TextInput, Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, TextInput, Image,ScrollView } from 'react-native';
 import { useState } from 'react';
 import React from "react"
 import Header from '../components/Header';
@@ -30,6 +30,16 @@ export default function Avatar(props) {
             'https://avatarfiles.alphacoders.com/123/thumb-123564.jpg',
             'https://avatarfiles.alphacoders.com/274/thumb-274766.jpg',
             'https://avatarfiles.alphacoders.com/170/thumb-170306.png',
+            'https://avatarfiles.alphacoders.com/104/thumb-104240.jpg',
+            'https://avatarfiles.alphacoders.com/132/thumb-132766.png',
+            'https://avatarfiles.alphacoders.com/920/thumb-92021.png',
+            'https://avatarfiles.alphacoders.com/285/thumb-28583.jpg',
+            'https://avatarfiles.alphacoders.com/187/thumb-187711.png',
+            'https://avatarfiles.alphacoders.com/927/thumb-92766.jpg',
+            'https://avatarfiles.alphacoders.com/323/thumb-323877.png',
+            'https://avatarfiles.alphacoders.com/322/thumb-322708.jpg',
+            'https://avatarfiles.alphacoders.com/290/thumb-290288.jpg',
+
         ]
 
         return(
@@ -97,7 +107,7 @@ export default function Avatar(props) {
             paddingTop:30,
             paddingHorizontal:20,
             width:"100%",
-            height:"70%",
+            
             overflow:"hidden",
             display:"float",
             flexDirection: 'row',
@@ -139,9 +149,11 @@ export default function Avatar(props) {
         <Text style={styles.title}>Choose your Avatar</Text>
 
 
+            <ScrollView>
         <View style={styles.container}>
             {showAvatars()}
         </View>
+            </ScrollView>
 
         {/* <View > */}
         <TouchableOpacity

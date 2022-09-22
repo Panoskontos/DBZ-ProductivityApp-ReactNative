@@ -55,6 +55,8 @@ export default function Tasks(props) {
     const showTasks = () =>{
         return props.tasks.map((i)=>{
             return(
+                <ScrollView horizontal={true}>
+
             <View style={styles.task} key={i.id}>
                 <Text style={styles.task_title}>{i.title}</Text>
 
@@ -71,6 +73,8 @@ export default function Tasks(props) {
                 </TouchableHighlight>
                 
             </View>
+            </ScrollView>
+
 
             )
         })

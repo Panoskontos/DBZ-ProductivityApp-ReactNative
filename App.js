@@ -14,7 +14,7 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 export default function App() {
 
   // Routing
-  const [route, setRoute] = useState("Home")
+  const [route, setRoute] = useState("Avatar")
   const [selected_task, setSelected_task] = useState(null)
   const [chosenAvatar, setChosenAvatar] = useState("https://www.aacai.com.au/wp-content/plugins/userpro/img/default_avatar_female.jpg")
   const [completed, setCompleted] = useState(0)
