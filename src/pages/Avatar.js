@@ -118,6 +118,7 @@ export default function Avatar(props) {
             alignContent:'center',
             justifyContent:'center',
             marginRight:35,
+            marginTop:30,
             width:60,
             height:60,
             shadowColor:'grey',
