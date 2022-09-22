@@ -67,7 +67,7 @@ export default function Header(props) {
             <Image  
             style={styles.headerProfile}
             source={{
-                uri:'https://randomuser.me/api/portraits/men/86.jpg'
+                uri:props.chosenAvatar
                 // uri:''
             }}
             />

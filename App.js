@@ -16,7 +16,7 @@ export default function App() {
   // Routing
   const [route, setRoute] = useState("Avatar")
   const [selected_task, setSelected_task] = useState(null)
-
+  const [chosenAvatar, setChosenAvatar] = useState("https://www.aacai.com.au/wp-content/plugins/userpro/img/default_avatar_female.jpg")
   const [completed, setCompleted] = useState(15)
   const [progress, setProgress] = useState(3)
   const [deleted, setDeleted] = useState(0)
@@ -58,6 +58,7 @@ export default function App() {
         setDeleted={setDeleted}
         setCompleted={setCompleted}
         setProgress={setProgress}
+        chosenAvatar={chosenAvatar}
         />
         break;
       case "Create":
@@ -74,7 +75,12 @@ export default function App() {
           return <Edit route={route} setRoute={setRoute} tasks={tasks} setTasks={setTasks} selected_task={selected_task} />
           break;
         case "Avatar":
-          return <Avatar route={route} setRoute={setRoute} />
+          return <Avatar 
+          route={route} 
+          setRoute={setRoute} 
+          chosenAvatar={chosenAvatar}
+          setChosenAvatar={setChosenAvatar}
+          />
           break;
       default:
         break;

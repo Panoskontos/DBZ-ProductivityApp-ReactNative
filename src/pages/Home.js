@@ -24,6 +24,7 @@ export default function Home(props) {
                 <Header 
                   route={props.route} 
                   setRoute={props.setRoute} 
+                  chosenAvatar={props.chosenAvatar}
                 />
 
                 <StatusCards completed={props.completed} progress={props.progress} deleted={props.deleted} />

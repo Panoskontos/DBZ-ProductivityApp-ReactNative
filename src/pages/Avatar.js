@@ -13,25 +13,30 @@ export default function Avatar(props) {
         props.setRoute("Home")
     }
 
+    const choseAvatar = (i) =>{
+        props.setChosenAvatar(i)
+        props.setRoute("Home")
+    }
+
 
     const showAvatars = () =>{
         const uris=[
-            'https://randomuser.me/api/portraits/men/86.jpg',
-            'https://randomuser.me/api/portraits/men/86.jpg',
-            'https://randomuser.me/api/portraits/men/86.jpg',
-            'https://randomuser.me/api/portraits/men/86.jpg',
-            'https://randomuser.me/api/portraits/men/86.jpg',
-            'https://randomuser.me/api/portraits/men/86.jpg',
-            'https://randomuser.me/api/portraits/men/86.jpg',
-
+            'https://avatarfiles.alphacoders.com/781/thumb-78133.png',
+            'https://avatarfiles.alphacoders.com/147/thumb-147194.jpg',
+            'https://avatarfiles.alphacoders.com/700/thumb-70000.png',
+            'https://avatarfiles.alphacoders.com/121/thumb-121874.png',
+            'https://avatarfiles.alphacoders.com/168/thumb-168561.jpg',
+            'https://avatarfiles.alphacoders.com/818/thumb-81849.png',
+            'https://avatarfiles.alphacoders.com/123/thumb-123564.jpg',
+            'https://avatarfiles.alphacoders.com/274/thumb-274766.jpg',
+            'https://avatarfiles.alphacoders.com/170/thumb-170306.png',
         ]
 
         return(
 
             uris.map((i)=>{
                 return(
-            <TouchableOpacity>
-
+            <TouchableOpacity onPress={()=>{choseAvatar(i)}}>
                     <View style={styles.headerProfileContainer}>
                         <Image  
                             style={styles.headerProfile}
@@ -88,7 +93,7 @@ export default function Avatar(props) {
         },
 
         container:{
-            backgroundColor:"red",
+            // backgroundColor:"red",
             paddingTop:30,
             paddingHorizontal:20,
             width:"100%",
