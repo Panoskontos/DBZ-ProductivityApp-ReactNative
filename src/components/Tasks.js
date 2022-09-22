@@ -55,9 +55,9 @@ export default function Tasks(props) {
     const showTasks = () =>{
         return props.tasks.map((i)=>{
             return(
+                
+                <View style={styles.task} key={i.id}>
                 <ScrollView horizontal={true}>
-
-            <View style={styles.task} key={i.id}>
                 <Text style={styles.task_title}>{i.title}</Text>
 
                 <TouchableHighlight onPress={()=>editTask(i)}>
@@ -72,8 +72,8 @@ export default function Tasks(props) {
                     <Icon name={i.completed?"check-circle-outline":"checkbox-blank-circle-outline"} size={24} color={i.completed?"green":"#646da1"} style={{marginLeft:23}}/>
                 </TouchableHighlight>
                 
-            </View>
             </ScrollView>
+            </View>
 
 
             )

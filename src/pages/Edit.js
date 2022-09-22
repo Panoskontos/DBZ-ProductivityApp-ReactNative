@@ -11,7 +11,17 @@ export default function Edit(props) {
 
   const [text, onChangeText] = React.useState(props.selected_task.title);
   const [text2, onChangeText2] = React.useState("");
-  const image = { uri: "https://w0.peakpx.com/wallpaper/888/241/HD-wallpaper-dbz-goku.jpg" };
+  const images = [
+    "https://w0.peakpx.com/wallpaper/888/241/HD-wallpaper-dbz-goku.jpg" ,
+    "https://wallpaper.dog/large/20501620.jpg",
+    "https://i.pinimg.com/736x/b3/1b/91/b31b915ae523d217b6d2df378dc7f4c9.jpg"
+
+  ]
+  // const image = { uri: "https://w0.peakpx.com/wallpaper/888/241/HD-wallpaper-dbz-goku.jpg" };
+
+  // const image = { uri: images[Math.floor(Math.random() * images.length)] };
+  const [image, setImage] = React.useState({ uri: images[Math.floor(Math.random() * images.length)]})
+
 
   const updateTask = () =>{
     var new_tasks = props.tasks
@@ -162,7 +172,7 @@ sBtn:{
                   style={styles.input}
                   onChangeText={onChangeText}
                   value={text}
-                  multiline={true}
+                  // multiline={true}
                 />
               </SafeAreaView>
 
