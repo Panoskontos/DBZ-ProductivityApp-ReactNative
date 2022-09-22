@@ -4,7 +4,11 @@ import { useState } from 'react';
 import React from "react"
 
 
-export default function Header() {
+export default function Header(props) {
+
+    const goAvatar =()=>{
+        props.setRoute("Avatar")
+    }
 
     const styles = StyleSheet.create({
         header: {
@@ -59,6 +63,7 @@ export default function Header() {
     <View style={styles.header}>
         <View style={styles.headerProfileContainer}>
 
+            <TouchableOpacity onPress={()=>{goAvatar()}}>
             <Image  
             style={styles.headerProfile}
             source={{
@@ -66,6 +71,7 @@ export default function Header() {
                 // uri:''
             }}
             />
+            </TouchableOpacity>
 
             </View>
 

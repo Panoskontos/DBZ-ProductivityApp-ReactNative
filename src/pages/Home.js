@@ -21,7 +21,10 @@ export default function Home(props) {
         <View style={styles.top}>
             <View style={styles.container}>
                 
-                <Header />
+                <Header 
+                  route={props.route} 
+                  setRoute={props.setRoute} 
+                />
 
                 <StatusCards completed={props.completed} progress={props.progress} deleted={props.deleted} />
             {/* <Text style={styles.text}>

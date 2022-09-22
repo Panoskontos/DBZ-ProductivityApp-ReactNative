@@ -6,6 +6,7 @@ import React from "react"
 import Home from './src/pages/Home';
 import Create from './src/pages/Create';
 import Edit from './src/pages/Edit';
+import Avatar from './src/pages/Avatar';
 import { IconComponentProvider, Icon } from "@react-native-material/core";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
@@ -13,7 +14,7 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 export default function App() {
 
   // Routing
-  const [route, setRoute] = useState("Home")
+  const [route, setRoute] = useState("Avatar")
   const [selected_task, setSelected_task] = useState(null)
 
   const [completed, setCompleted] = useState(15)
@@ -23,18 +24,18 @@ export default function App() {
   const [tasks, setTasks] = useState([
     {
         id:`skills_${new Date().getTime()}_${Math.random()}`,
-        title: "Clean Car",
+        title: "Work",
         completed:false
     },
     {
         id:`skills_${new Date().getTime()}_${Math.random()}`,
-        title: "Pay Net",
+        title: "Workout",
         completed:false
 
     },
     {
         id:`skills_${new Date().getTime()}_${Math.random()}`,
-        title: "Workout",
+        title: "Programm",
         completed:false
 
     },
@@ -71,6 +72,9 @@ export default function App() {
         break;
         case "Edit":
           return <Edit route={route} setRoute={setRoute} tasks={tasks} setTasks={setTasks} selected_task={selected_task} />
+          break;
+        case "Avatar":
+          return <Avatar route={route} setRoute={setRoute} />
           break;
       default:
         break;
