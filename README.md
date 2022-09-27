@@ -1,6 +1,6 @@
 # React-Native-Productivity App
 
-#### Write down your daily tasks and complete them with this app
+#### Write down your daily tasks and complete them with this Productivity app
 
 ####  App Demo (IOS) (DragonBall Edition)
 
